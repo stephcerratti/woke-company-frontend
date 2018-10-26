@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './assets/bridge-logo.svg';
 import { checkApiServer } from './api';
 import Header from './components/Header';
+import CheckList from './components/CheckList';
 
 class App extends Component {
 	componentDidMount() {
@@ -15,6 +16,7 @@ class App extends Component {
 				<p className="App-intro">
 					To get started, edit <code>src/App.js</code> and save to reload.
 				</p>
+				<CheckList />
 			</div>
 		);
 	}
