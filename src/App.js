@@ -16,7 +16,7 @@ class App extends Component {
     // checking that we're connected to the backend
     checkApiServer();
   }
-  submit = values => {Ω
+  submit = values => {
     // print the form values to the console
     console.log(values);
   };
