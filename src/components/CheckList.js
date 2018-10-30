@@ -3,11 +3,11 @@ import CheckListItem from "./CheckListItem.js";
 
 const CheckList = props => {
 	return (
-		<React.Fragment>
-			<h2> Company Checklist</h2>
+		<div className="max-w-sm text-justify">
+			<h2 className="text-center"> Company Checklist</h2>
 			<CheckListItem />
-		</React.Fragment>
-		)
+		</div>
+	)
 }
 
 export default CheckList;

@@ -4,9 +4,9 @@ import listitem from './checklistitems.json';
 const CheckListItem = props => {
 	console.log(listitem);
 	return (
-		<ul>
-			{listitem.companyRequirements.map(key => 
-				<li><input type="checkbox" value="item"/>{key.requirement}</li>
+		<ul className="list-reset"> 
+			{listitem.companyRequirements.map((key, i) => 
+				<li><input id={`checkbox-${i}`} type="checkbox" value="item"/><label htmlFor={`checkbox-${i}`}>{key.requirement}</label></li>
 			)}
 		</ul>
 		
