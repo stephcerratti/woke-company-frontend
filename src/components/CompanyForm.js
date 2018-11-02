@@ -61,17 +61,21 @@ const CompanyForm = props => {
           displayDate={displayDate}
         />
 
-        {listitem.companyRequirements.map((key, i) => (
-          <Field
-            name={`checkItem-${i}`}
-            key={`${i}`}
-            id={i}
-            type="checkbox"
-            component={CheckListItem}
-            label="Company Check List"
-            text={key.requirement}
-          />
-        ))}
+        <div className="w-1/2 m-5">
+        <h3 className="text-center">Company Checklist</h3>
+        {
+          listitem.companyRequirements.map((key, i) => (
+            <Field
+              name={key.dataLabel}
+              id={i}
+              type="checkbox"
+              component={CheckListItem}
+              label="Company Check List"
+              text={key.requirement}
+            />
+          ))
+        }
+        </div>
 
         <Field name="techDropdown" component={TechStackDropdown} />
         <Field name="industryDropdown" component={IndustryDropdown} />
