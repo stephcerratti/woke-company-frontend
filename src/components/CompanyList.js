@@ -7,8 +7,12 @@ import { checkApiServer } from '../api';
 // REDUX CONNECT
 import { connect } from 'react-redux';
 // REDUX ACTIONS
-import { getCompanies } from '../actions/actionCreators';
+import { getCompanies, showCertified, showAll } from '../actions/actionCreators';
 import CompanyCard from './CompanyCard';
+import CertifiedButton from './CertifiedButton';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 // import {faListUl, faTag} from '@fortawesome/free-solid-svg-icons';
 
 class CompanyList extends Component {
@@ -31,6 +35,18 @@ class CompanyList extends Component {
           <Route path={'/companies/:id'} component={CompanyCard} />
         </Switch>
         })}
+
+        <div>
+          {' '}
+          <CertifiedButton handleClick={this.props.showCertified}>
+            Certified Companies
+          </CertifiedButton>
+          {' '}
+          <CertifiedButton handleClick={this.props.showAll}>
+            All Companies
+          </CertifiedButton>
+        </div>
+
         {!this.props.selectedCompany ? 
         <div>
           {this.props.companies.map((company, i) => {
@@ -57,7 +73,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-	getCompanies
+  getCompanies,
+  showCertified,
+  showAll,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CompanyList);
