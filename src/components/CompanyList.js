@@ -10,7 +10,6 @@ import { connect } from 'react-redux';
 import { getCompanies, showCertified, showAll } from '../actions/actionCreators';
 import CompanyCard from './CompanyCard';
 import CertifiedButton from './CertifiedButton';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // import {faListUl, faTag} from '@fortawesome/free-solid-svg-icons';
